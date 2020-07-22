@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.sd.client.controller.UserController"
+            prefHeight="500.0" prefWidth="1400.0">
+
+    <children>
+        <Button fx:id="viewUsers" layoutX="30.0" layoutY="25.0" mnemonicParsing="false" onAction="#viewUsers" text="View Users" />
+        <Button fx:id="createUser" layoutX="140.0" layoutY="25.0" mnemonicParsing="false" onAction="#createUser" text="Save New User" />
+        <Button fx:id="deleteUser" layoutX="270.0" layoutY="25.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete User" />
+        <Button fx:id="selectUser" layoutX="390.0" layoutY="25.0" mnemonicParsing="false" onAction="#selectUser" text="Select User" />
+        <Button fx:id="updateUser" layoutX="510.0" layoutY="25.0" mnemonicParsing="false" onAction="#updateUser" text="Update User" />
+        <Button fx:id="editBorrows" layoutX="630.0" layoutY="25.0" mnemonicParsing="false" onAction="#editBorrows" text="Edit User Borrows" />
+
+        <Label layoutX="1000.0" layoutY="70.0" text="First Name: "/>
+        <TextField fx:id="newFirstName" layoutX="1100.0" layoutY="70.0" promptText="Enter user's first name" />
+        <Label layoutX="1000.0" layoutY="120.0" text="Last Name: "/>
+        <TextField fx:id="newLastName" layoutX="1100.0" layoutY="120.0" promptText="Enter user's last name" />
+        <Label layoutX="1000.0" layoutY="170.0" text="Gender: "/>
+        <ComboBox fx:id="selectGender" layoutX="1100.0" layoutY="170.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Male" />
+                    <String fx:value="Female" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Label layoutX="1000.0" layoutY="220.0" text="Phone: "/>
+        <TextField fx:id="newPhone" layoutX="1100.0" layoutY="220.0" promptText="Enter user's phone" />
+        <Label layoutX="1000.0" layoutY="270.0" text="E-mail: "/>
+        <TextField fx:id="newEmail" layoutX="1100.0" layoutY="270.0" promptText="Enter user's e-mail" />
+        <Label layoutX="1000.0" layoutY="320.0" text="Username: "/>
+        <TextField fx:id="newUsername" layoutX="1100.0" layoutY="320.0" promptText="Enter user's username" />
+        <Label layoutX="1000.0" layoutY="370.0" text="Password: "/>
+        <TextField fx:id="newPassword" layoutX="1100.0" layoutY="370.0" promptText="Enter user's password" />
+        <Label layoutX="1000.0" layoutY="420.0" text="Account type: "/>
+        <ComboBox fx:id="selectAccountType" layoutX="1100.0" layoutY="420.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="admin" />
+                    <String fx:value="user" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </children>
+
+    <TableView fx:id="tableViewUsers" GridPane.columnIndex="0"
+               layoutX="20.0"
+               layoutY="70.0"
+               prefWidth="950"
+               GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="personId" text="Id" prefWidth="30">
+            </TableColumn>
+            <TableColumn fx:id="firstName" text="First Name" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="lastName" text="Last Name" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="gender" text="Gender" prefWidth="70">
+            </TableColumn>
+            <TableColumn fx:id="phone" text="Phone" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="email" text="E-mail" prefWidth="150">
+            </TableColumn>
+            <TableColumn fx:id="username" text="Username" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="password" text="Password" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="type" text="Account Type" prefWidth="100">
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

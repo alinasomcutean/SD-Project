@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.sd.client.controller.RegularUserController"
+            prefHeight="650.0" prefWidth="1400.0">
+
+    <children>
+        <Label fx:id="loggedAccount" layoutX="50" layoutY="10" text="Logged in account: "/>
+
+        <Label layoutX="20.0" layoutY="50.0" text="Search books after a criteria: "/>
+        <ComboBox fx:id="searchCriteria" layoutX="30.0" layoutY="80.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Genre" />
+                    <String fx:value="Title" />
+                    <String fx:value="Author" />
+                    <String fx:value="Time" />
+                    <String fx:value="Rating" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <TextField fx:id="searchTextField" layoutX="140.0" layoutY="80.0"/>
+        <Button fx:id="searchBook" layoutX="300.0" layoutY="80.0" mnemonicParsing="false" onAction="#searchBook" text="Search Book" />
+        <Button fx:id="viewBooks" layoutX="30.0" layoutY="130.0" mnemonicParsing="false" onAction="#viewBooks" text="View Books" />
+        <Button fx:id="viewBorrow" layoutX="115.0" layoutY="130.0" mnemonicParsing="false" onAction="#viewBorrow" text="View Borrows" />
+        <Button fx:id="borrowBook" layoutX="210.0" layoutY="130.0" mnemonicParsing="false" onAction="#borrowBook" text="Borrow Book" />
+        <Button fx:id="selectBook" layoutX="305.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectBook" text="Select Book" />
+
+        <Label layoutX="1000.0" layoutY="30.0" text="Penalty: "/>
+        <Label fx:id="penalty" layoutX="1000.0" layoutY="30.0" text="Penalty: "/>
+        <ComboBox fx:id="returnState" layoutX="1000" layoutY="70">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="New"/>
+                    <String fx:value="Damaged"/>
+                    <String fx:value="Used"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button fx:id="returnBook" layoutX="1000.0" layoutY="110.0" mnemonicParsing="false" onAction="#returnBook" text="Return Book" />
+        <Button fx:id="putInQueue" layoutX="1000.0" layoutY="150.0" mnemonicParsing="false" onAction="#putInQueue" text="Put in queue" />
+
+        <Button fx:id="viewFavourites" layoutX="1200.0" layoutY="40.0" mnemonicParsing="false" onAction="#viewFavourites" text="View Favourite Books" />
+        <Button fx:id="addToFavourites" layoutX="1200.0" layoutY="90.0" mnemonicParsing="false" onAction="#addToFavourites" text="Add to favourites" />
+        <Button fx:id="removeFromFavourites" layoutX="1200.0" layoutY="140.0" mnemonicParsing="false" onAction="#removeFromFavourites" text="Remove from favourites" />
+
+        <Rating fx:id="rating" layoutX="50.0" layoutY="180.0"/>
+        <Button fx:id="rateBook" layoutX="240.0" layoutY="185.0" mnemonicParsing="false" onAction="#rateBook" text="Rate Book" />
+
+        <Button fx:id="viewReviews" layoutX="500.0" layoutY="20.0" mnemonicParsing="false" onAction="#viewReviews" text="View Reviews" />
+        <Button fx:id="reviewBook" layoutX="750.0" layoutY="20.0" mnemonicParsing="false" onAction="#reviewBook" text="Review Book" />
+        <TextArea fx:id="review" layoutX="450" layoutY="60" prefHeight="140"/>
+    </children>
+
+    <TableView fx:id="tableViewBooks" GridPane.columnIndex="0"
+               layoutX="20.0"
+               layoutY="220.0"
+               prefWidth="970"
+               GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="title" text="Title" prefWidth="220">
+            </TableColumn>
+            <TableColumn fx:id="author" text="Author" prefWidth="100">
+            </TableColumn>
+            <TableColumn fx:id="subject" text="Genre" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="description" text="Description" prefWidth="190">
+            </TableColumn>
+            <TableColumn fx:id="edition" text="Edition" prefWidth="100">
+            </TableColumn>
+            <TableColumn fx:id="pages" text="Pages" prefWidth="50">
+            </TableColumn>
+            <TableColumn fx:id="price" text="Price" prefWidth="50">
+            </TableColumn>
+            <TableColumn fx:id="status" text="Status" prefWidth="70">
+            </TableColumn>
+            <TableColumn fx:id="ratingColumn" text="Rating" prefWidth="70">
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <TableView fx:id="tableViewBorrow" GridPane.columnIndex="0"
+               layoutX="1000.0"
+               layoutY="220.0"
+               prefWidth="160"
+               GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="borrowDate" text="Borrow Date" prefWidth="80">
+            </TableColumn>
+            <TableColumn fx:id="dueDate" text="dueDate" prefWidth="80">
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <TableView fx:id="tableViewFavourites" GridPane.columnIndex="0"
+               layoutX="1180.0"
+               layoutY="220.0"
+               prefWidth="200"
+               GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="favouriteTitle" text="Title" prefWidth="120">
+            </TableColumn>
+            <TableColumn fx:id="favouriteAuthor" text="Author">
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

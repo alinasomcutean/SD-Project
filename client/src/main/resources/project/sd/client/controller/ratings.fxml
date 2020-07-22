@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.sd.client.controller.RatingsController"
+            prefHeight="500.0" prefWidth="700.0">
+
+    <children>
+        <Label layoutX="60" layoutY="27" text="Rating: "/>
+        <TextField fx:id="newRating" layoutX="110" layoutY="25" promptText="Rating"/>
+        <Button fx:id="edit" layoutX="280.0" layoutY="25.0" mnemonicParsing="false" onAction="#editRating" text="Save"/>
+    </children>
+
+    <TableView fx:id="tableViewRatings" GridPane.columnIndex="0"
+               layoutX="50.0"
+               layoutY="70.0"
+               prefWidth="600"
+               GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="title" text="Book's Title" prefWidth="200">
+            </TableColumn>
+            <TableColumn fx:id="author" text="Book's Author" prefWidth="150">
+            </TableColumn>
+            <TableColumn fx:id="username" text="Account Username" prefWidth="150">
+            </TableColumn>
+            <TableColumn fx:id="rating" text="Rating" prefWidth="100">
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

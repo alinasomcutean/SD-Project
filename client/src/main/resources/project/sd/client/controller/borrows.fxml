@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.sd.client.controller.BorrowsController"
+            prefHeight="700.0" prefWidth="770.0">
+
+    <children>
+        <Label fx:id="borrowsUser" layoutX="20" layoutY="10" text="Borrows for user: "/>
+
+        <Label fx:id="subscriptionsAccount" layoutX="20" layoutY="30" text="Number of subscriptions: "/>
+        <Label fx:id="subscriptionsLabel" layoutX="50" layoutY="60" text="Subscriptions"/>
+        <TextField fx:id="subscriptionsTextField" layoutX="140" layoutY="60" promptText="Enter the new number of subscriptions"/>
+        <Button fx:id="editSubscriptions" layoutX="300.0" layoutY="60.0" mnemonicParsing="false" onAction="#editSubscriptions" text="Save" />
+
+
+        <ComboBox fx:id="chooseReturnState" layoutX="140" layoutY="100">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="New"/>
+                    <String fx:value="Damaged"/>
+                    <String fx:value="Used"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button fx:id="returnBook" layoutX="310.0" layoutY="100.0" mnemonicParsing="false" onAction="#returnBook" text="Return Book" />
+
+        <TextField fx:id="borrow" layoutX="140" layoutY="150" promptText="Enter book's id"/>
+        <Button fx:id="borrowBook" layoutX="310.0" layoutY="150.0" mnemonicParsing="false" onAction="#borrowBook" text="Borrow Book" />
+    </children>
+
+    <TableView fx:id="tableViewBorrows" GridPane.columnIndex="0"
+               layoutX="70.0"
+               layoutY="200.0"
+               prefWidth="610"
+               GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="title" text="Book's Title" prefWidth="200">
+            </TableColumn>
+            <TableColumn fx:id="author" text="Book's Author" prefWidth="150">
+            </TableColumn>
+            <TableColumn fx:id="borrowDate" text="Borrow Date" prefWidth="80">
+            </TableColumn>
+            <TableColumn fx:id="dueDate" text="Due Date" prefWidth="80">
+            </TableColumn>
+            <TableColumn fx:id="returnState" text="Return State" prefWidth="100">
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>
